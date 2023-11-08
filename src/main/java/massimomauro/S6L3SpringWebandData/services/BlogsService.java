@@ -1,6 +1,8 @@
 package massimomauro.S6L3SpringWebandData.services;
 
 import massimomauro.S6L3SpringWebandData.entities.Blog;
+import massimomauro.S6L3SpringWebandData.repositories.BlogsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,6 +12,9 @@ import java.util.Random;
 @Service
 public class BlogsService {
     private List<Blog> blogs = new ArrayList<>();
+    @Autowired
+    private BlogsRepository blogsRepository;
+
 
     public Blog save(Blog body){
         Random rndm = new Random();
